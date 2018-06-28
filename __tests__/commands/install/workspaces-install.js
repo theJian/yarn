@@ -168,6 +168,12 @@ test.concurrent('install should prioritize non workspace dependency at root over
   });
 });
 
+test.concurrent('install should run lifecycle scripts in each package', (): Promise<void> => {
+  return runInstall({}, 'workspaces-install-scripts', async (config): Promise<void> => {
+    // TODO
+  });
+});
+
 test.concurrent('install should install subdependencies of workspaces', (): Promise<void> => {
   // the tricky part is that isarray is a subdependency of left-pad that is not referenced in the root
   // but another workspace
